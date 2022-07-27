@@ -7,7 +7,7 @@ Funcionalidade: Buscar Debêntures
     Para encontrar informações em específico.
 
 Contexto:
-    Dado que eu desejo buscar por uma debênture
+    Dado que desejo buscar por uma debênture
 
 Cenário: Realizar uma busca por debênture com sucesso
     Quando pesquiso um código da B3 no campo de busca 
