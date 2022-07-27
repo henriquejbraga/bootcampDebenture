@@ -1,31 +1,34 @@
-# language: pt
+#language: pt-br
+#encoding: utf-8
 
-Feature: Busca de Debêntures
-    Como usuário preciso buscar por debêntures para encontrar informações em específico.
+Funcionalidade: Buscar Debêntures
+    Como usuário
+    Preciso buscar por debêntures
+    Para encontrar informações em específico.
 
-Background:
-    Given Que eu desejo buscar por uma debênture
+Contexto:
+    Dado que eu desejo buscar por uma debênture
 
-Scenario: Realizar uma busca por debênture com sucesso
-    When Pesquiso um código da B3 no campo de busca 
-    Then recebo as informações da debênture
+Cenário: Realizar uma busca por debênture com sucesso
+    Quando pesquiso um código da B3 no campo de busca 
+    Então recebo as informações da debênture
 
-Scenario: Realizar uma busca por debênture com sucesso
-    When Pesquiso um código ISIN no campo de busca 
-    Then recebo as informações da debênture
+Cenário: Realizar uma busca por debênture com sucesso
+    Quando pesquiso um código ISIN no campo de busca 
+    Então recebo as informações da debênture
 
-Scenario: Realizar uma busca por debênture com sucesso
-    When Pesquiso pelo Emissor no campo de busca 
-    Then recebo as informações da debênture
+Cenário: Realizar uma busca por debênture com sucesso
+    Quando pesquiso pelo Emissor no campo de busca 
+    Então recebo as informações da debênture
 
-Scenario: Realizar uma busca por debênture com sucesso
-    When Pesquiso pelo Agente Fiduciário no campo de busca 
-    Then recebo as informações da debênture
+Cenário: Realizar uma busca por debênture com sucesso
+    Quando pesquiso pelo Agente Fiduciário no campo de busca 
+    Então recebo as informações da debênture
 
-Scenario: Realizar uma busca por debênture com sucesso
-    When Pesquiso um CNPJ no campo de busca 
-    Then recebo as informações da debênture
+Cenário: Realizar uma busca por debênture com sucesso
+    Quando pesquiso um CNPJ no campo de busca 
+    Então recebo as informações da debênture
 
-Scenario: Realizar uma busca de debêntures sem sucesso
-    When Pesquiso um código da B3 inexistente no campo de busca
-    Then Recebo uma mensagem que não foi encontrado.
+Cenário: Realizar uma busca de debêntures sem sucesso
+    Quando pesquiso um código da B3 inexistente no campo de busca
+    Então Recebo uma mensagem que não foi encontrado.
