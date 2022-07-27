@@ -1,31 +1,85 @@
-# language: pt
+#language: pt-br
+#encoding: utf-8
 
-Feature: Busca de Debêntures
-    Como usuário preciso buscar por debêntures para encontrar informações em específico.
+Funcionalidade: Buscar Debêntures
+    Como usuário
+    Preciso buscar por debêntures
+    Para encontrar informações em específico.
 
-Background:
-    Given Que eu desejo buscar por uma debênture
+Contexto: Possibilidade de buscar por uma debênture
+    Dado que busco por uma debênture
 
-Scenario: Realizar uma busca por debênture com sucesso
-    When Pesquiso um código da B3 no campo de busca 
-    Then recebo as informações da debênture
+Esquema do Cenário: Realizar uma busca por debênture com sucesso
+    Quando pesquiso pelo <Tipo> no campo de busca
+    Então recebo as mesmas <Informações> da debênture
 
-Scenario: Realizar uma busca por debênture com sucesso
-    When Pesquiso um código ISIN no campo de busca 
-    Then recebo as informações da debênture
+Exemplos:
+    | Tipo               | | Informações                     |
+    | Codigo B3          | | AALM11 AURA ALMAS MINERACAO S.A |
+    | ISIN               | | AALM11 AURA ALMAS MINERACAO S.A |
+    | Emissor            | | AALM11 AURA ALMAS MINERACAO S.A |
+    | Agente Fiduciário  | | AALM11 AURA ALMAS MINERACAO S.A |
+    | CNPJ               | | AALM11 AURA ALMAS MINERACAO S.A |
 
-Scenario: Realizar uma busca por debênture com sucesso
-    When Pesquiso pelo Emissor no campo de busca 
-    Then recebo as informações da debênture
+Esquema do Cenário: Realizar uma busca de debêntures sem sucesso
+    Quando pesquiso pelo <Tipo> inválido no campo de busca
+    Então recebo uma mensagem e uma opção para seguir o fluxo
 
-Scenario: Realizar uma busca por debênture com sucesso
-    When Pesquiso pelo Agente Fiduciário no campo de busca 
-    Then recebo as informações da debênture
+Exemplos:
+    | Tipo               | 
+    | Codigo B3          |
+    | ISIN               |
+    | Emissor            | 
+    | Agente Fiduciário  |
+    | CNPJ               |
 
-Scenario: Realizar uma busca por debênture com sucesso
-    When Pesquiso um CNPJ no campo de busca 
-    Then recebo as informações da debênture
+Cenário: Acessar página de ver detalhes da debênture
+    Dado que eu tenha realizado a busca de um ativo
+    Quando clico em ver detalhes
+    Então mais detalhes da debênture são exibidos na tela
+ 
 
-Scenario: Realizar uma busca de debêntures sem sucesso
-    When Pesquiso um código da B3 inexistente no campo de busca
-    Then Recebo uma mensagem que não foi encontrado.
+Cenário: Utilizar o site através de um mobile
+    Dado que utilizo um celular
+    Quando acesso o site
+    Então ele é responsivo
+
+Esquema do Cenário: Existir um campo de busca por debêntures
+    Dado que eu acesse o site ANBIMA 
+    Quando informar o <Tipo>
+    Então existe a opção de busca por debêntures
+
+Exemplos:
+    | Tipo               | 
+    | Codigo B3          |
+    | ISIN               |
+    | Emissor            | 
+    | Agente Fiduciário  |
+    | CNPJ               |
+
+
+
+# Cenário: Realizar uma busca de debêntures sem sucesso
+#     Quando pesquiso um código da B3 inexistente no campo de busca
+#     Então Recebo uma mensagem que não foi encontrado.
+
+
+# Cenário: Realizar uma busca por debênture com sucesso
+#     Quando pesquiso um código da B3 no campo de busca 
+#     Então recebo as informações da debênture
+
+# Cenário: Realizar uma busca por debênture com sucesso
+#     Quando pesquiso um código ISIN no campo de busca  s
+#     Então recebo as informações da debênture
+
+# Cenário: Realizar uma busca por debênture com sucesso
+#     Quando pesquiso pelo Emissor no campo de busca 
+#     Então recebo as informações da debênture
+
+# Cenário: Realizar uma busca por debênture com sucesso
+#     Quando pesquiso pelo Agente Fiduciário no campo de busca 
+#     Então recebo as informações da debênture
+
+# Cenário: Realizar uma busca por debênture com sucesso
+#     Quando pesquiso um CNPJ no campo de busca 
+#     Então recebo as informações da debênture
