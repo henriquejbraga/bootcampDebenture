@@ -1,5 +1,10 @@
 #language: pt-br
 #encoding: utf-8
+# renomeiar arquivo, ver o contexto, dado q estou na homepage,, no quando. busca por <tipo>, 
+# 
+
+
+
 
 Funcionalidade: Buscar Debêntures
     Como usuário
