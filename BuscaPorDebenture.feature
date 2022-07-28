@@ -8,8 +8,8 @@ Funcionalidade: Buscar Debêntures
         # Quando busco por debêntures
         # Quando realizo uma busca pela debênture "AALM11"
         # Quando realizo uma busca pela debênture AALM11
-        Quando realizo uma busca pelo código B3 AALM11
         # Quando realizo uma busca pelo codigo B3 da debênture AALM11
+        Quando realizo uma busca pelo código B3 AALM11
         Então visualizo a debênture AALM11 no resultado da busca
 
     Cenário: Realizar a busca de uma debênture pelo ISIN
@@ -28,15 +28,5 @@ Funcionalidade: Buscar Debêntures
         Dado que estou na homepage da anbima
         Quando realizo uma busca pelo código B3 AALM11
         E acesso ver detalhes
-        Então visualizo caracteristicas da debênture
+        Então visualizo características da debênture
         
-
-
-
-
-
-
-Cenário: Acessar página de ver detalhes da debênture
-    Dado que eu tenha realizado a busca de um ativo
-    Quando clico em ver detalhes
-    Então mais detalhes da debênture são exibidos na tela
