@@ -38,4 +38,11 @@ Funcionalidade: Buscar Debêntures
         Quando realizo uma busca pelo código B3 AALM11
         E acesso ver detalhes
         Então visualizo características da debênture
-        
+    
+    Cenário: Acessar com mobile
+        Quando carrega o conteúdo da página
+        Então está responsivo
+
+    Cenário: Realizar a busca de uma debênture inexistente
+        Quando realizo uma busca 
+        Então visualizo uma mensagem e uma opção para seguir o fluxo
