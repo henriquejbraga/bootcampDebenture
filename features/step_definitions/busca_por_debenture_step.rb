@@ -1,9 +1,10 @@
 Dado('que estou na homepage da anbima') do
-    pending # Write code here that turns the phrase above into concrete actions
+  @busca_page = Busca.new
+  @busca_page.load
   end
   
   Quando('realizo uma busca pelo código AALM11') do
-    pending # Write code here that turns the phrase above into concrete actions
+    @busca_page.buscar
   end
   
   Quando('realizo uma busca pelo código ISIN') do
