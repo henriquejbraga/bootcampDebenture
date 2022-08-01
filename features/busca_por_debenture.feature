@@ -14,7 +14,7 @@ Funcionalidade: Buscar Debêntures
         # Quando realizo uma busca pela debênture "AALM11"
         # Quando realizo uma busca pela debênture AALM11
         # Quando realizo uma busca pelo codigo B3 da debênture AALM11
-        Quando realizo uma busca pelo código B3 AALM11
+        Quando realizo uma busca pelo código AALM11
         Então visualizo a debênture AALM11 no resultado da busca
 
     Cenário: Realizar a busca de uma debênture pelo ISIN
