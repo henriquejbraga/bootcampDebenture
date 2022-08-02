@@ -35,8 +35,8 @@ Dado('que estou na homepage da anbima') do
     pending # Write code here that turns the phrase above into concrete actions
   end
 
-  Então('visualizo a debênture AALM11 no resultado da busca') do
-    expect(@busca_page.resultado_busca).to have_content
+  Então('visualizo a debênture "AALM11" no resultado da busca') do |param2|
+    expect(@busca_page.resultado_busca).to have_content(param2)
   end
   
   Então('visualizo características da debênture') do
