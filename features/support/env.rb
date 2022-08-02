@@ -1,12 +1,12 @@
-Before do
-  @app = App.new
-end
+# Before do
+#   @app = App.new
+# end
 
-class App
-  def busca
-    Busca.new
-  end
-end
+# class App
+#   def initialize
+#     @busca_page = Busca.new
+#   end
+# end
 
 require 'capybara'
 require 'capybara/cucumber'
@@ -21,7 +21,7 @@ end
 Capybara.configure do |config|
   config.run_server = false
   Capybara.default_driver = :site_prism
-  Capybara.page.driver.browser.manage.window.maximize  # Maximizando a tela
-  config.default_max_wait_time = 10  # Tempo máximo que a automação vai esperar para a página carregar
+  Capybara.page.driver.browser.manage.window.maximize
+  config.default_max_wait_time = 10 
   config.app_host = 'http://data.anbima.com.br'
 end

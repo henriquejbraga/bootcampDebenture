@@ -1,10 +1,12 @@
+
 Dado('que estou na homepage da anbima') do
   @busca_page = Busca.new
   @busca_page.load
   end
-  
-  Quando('realizo uma busca pelo código {string}') do |param|
-    @busca_page.buscar(param)
+
+  Quando('realizo uma busca pela debênture {string}') do |string|
+    @busca_page.buscar_debenture(string)
+    # sleep 10, para conseguir enxergar no site a pesquisa
   end
   
   Quando('realizo uma busca pelo código ISIN') do
@@ -35,8 +37,8 @@ Dado('que estou na homepage da anbima') do
     pending # Write code here that turns the phrase above into concrete actions
   end
 
-  Então('visualizo a debênture "AALM11" no resultado da busca') do |param2|
-    expect(@busca_page.resultado_busca).to have_content(param2)
+  Então('visualizo a debênture {string} no resultado da busca') do |nome_debênture|
+    expect(@busca_page.resultado_busca).to have_content(nome_debênture)
   end
 
   Então('visualizo a debênture AALM11 no resultado da busca') do

@@ -8,6 +8,7 @@ Funcionalidade: Buscar Debêntures
     Contexto: 
         Dado que estou na homepage da anbima    
 
+    @Agora
     Cenário: Realizar a busca de uma debênture por codigo B3
         # Quando busco por debêntures
         Quando realizo uma busca pela debênture "AALM11"

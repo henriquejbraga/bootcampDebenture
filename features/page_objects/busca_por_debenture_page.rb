@@ -8,10 +8,10 @@ element :detalhes_page, '#output__container--expressaoPapel'
 element :button_detalhes, '#item-button-detalhe-0'
 element :resultado_aalm11, 'h1'
 element :resultado_busca, '#item-nome-0'
+#alterar nomes, para ficarem auto explicativos
 
-
-def buscar(param)
-  input_busca.send_keys(param)
+def buscar_debenture(string)
+  input_busca.send_keys(string)
   button_debentures.click
 end
 
