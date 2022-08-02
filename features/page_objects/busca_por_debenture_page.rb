@@ -1,12 +1,18 @@
-class Busca < SitePrims::Page
+class Busca < SitePrism::Page
 
-set_url 'http://data.anbima.com.br'
+set_url '/'
 
 element :input_busca, '.anbima-ui-input-search__text'
+element :button_debentures, '#form-button-option-debentures'
+element :detalhes_page, '#output__container--expressaoPapel'
+element :button_detalhes, '#item-button-detalhe-0'
+element :resultado_aalm11, 'h1'
+element :resultado_busca, '#item-nome-0'
 
 
-def buscar()
-  input_busca.send_keys()
+def buscar(param)
+  input_busca.send_keys(param)
+  button_debentures.click
 end
 
 end

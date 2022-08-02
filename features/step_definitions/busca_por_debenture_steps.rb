@@ -3,7 +3,7 @@ Dado('que estou na homepage da anbima') do
   @busca_page.load
   end
   
-  Quando('realizo uma busca pelo código AALM11') do
+  Quando('realizo uma busca pelo código {string}') do
     @busca_page.buscar
   end
   
@@ -36,7 +36,7 @@ Dado('que estou na homepage da anbima') do
   end
 
   Então('visualizo a debênture AALM11 no resultado da busca') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(@busca_page.resultado_busca).to have_content
   end
   
   Então('visualizo características da debênture') do

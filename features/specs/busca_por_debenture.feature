@@ -1,5 +1,4 @@
 #language: pt
-#encoding: utf-8
 
 Funcionalidade: Buscar Debêntures
     Como usuário
@@ -11,11 +10,11 @@ Funcionalidade: Buscar Debêntures
 
     Cenário: Realizar a busca de uma debênture por codigo B3
         # Quando busco por debêntures
-        # Quando realizo uma busca pela debênture "AALM11"
+        Quando realizo uma busca pela debênture "AALM11"
         # Quando realizo uma busca pela debênture AALM11
         # Quando realizo uma busca pelo codigo B3 da debênture AALM11
         Quando realizo uma busca pelo código AALM11
-        Então visualizo a debênture AALM11 no resultado da busca
+        Então visualizo a debênture "AALM11" no resultado da busca
 
     Cenário: Realizar a busca de uma debênture pelo ISIN
         # Quando realizo uma busca pela debênture através do código ISIN
@@ -54,7 +53,3 @@ Funcionalidade: Buscar Debêntures
     Cenário: Realizar a busca com caracteres especiais
         Quando realizo uma busca pela debênture
         Então visualizo uma mensagem e uma opção para seguir o fluxo
-
-    # Cenário: Acessar homepage com mobile
-    #     Quando carrega o conteúdo da página
-    #     Então está responsivo
