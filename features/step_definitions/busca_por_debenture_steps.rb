@@ -32,8 +32,12 @@ Dado('que estou na homepage da anbima') do
     @busca_page.click_detalhes()  
   end
 
-  Quando('realizo uma busca pela debênture inexistente') do
-    pending # Write code here that turns the phrase above into concrete actions
+  Quando('realizo uma busca por código B3 {string}') do |b3_inexistente|
+    @busca_page.buscar_debenture(b3_inexistente)
+  end
+
+  Quando('realizo uma busca pela debênture') do
+    @busca_page.buscar_debenture_vazia
   end
 
   Então('visualizo a debênture {string} no resultado da busca') do |nome_debênture|
@@ -45,9 +49,9 @@ Dado('que estou na homepage da anbima') do
   end
   
   Então('visualizo uma mensagem e uma opção para seguir o fluxo') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(@busca_page.resultado_busca_erro).to have_content('Debêntures (0)')
   end
   
   Então('visualizo uma lista') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(@busca_page.lista_todos_resultados).to have_content('AALR12')
   end

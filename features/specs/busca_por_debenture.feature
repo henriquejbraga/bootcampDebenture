@@ -42,7 +42,7 @@ Funcionalidade: Buscar Debêntures
         Então visualizo características da debênture
 
     Cenário: Realizar a busca de uma debênture inexistente
-        Quando realizo uma busca pela debênture inexistente
+        Quando realizo uma busca por código B3 "ALM1"
         Então visualizo uma mensagem e uma opção para seguir o fluxo
 
     Cenário: Realizar a busca vazia de uma debênture
